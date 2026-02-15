@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 40px;
+            font-style: italic;
+            color: blue;
+            text-shadow: 2px 2px 2px red;
+        }
+        body{
+            text-align: center;
+            background: linear-gradient(to right,#fbc3eb 0%,#a6c1ee 51%,#fbc2eb 100%);
+        }
+        button{
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            box-shadow: 4px 4px 4px yellowgreen,-4px -4px 4px yellowgreen,4px -4px 4px yellowgreen,-4px 4px 4px yellowgreen;
+            margin:10px;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DRUMSTICKS</h1>
+    <button id="1" style="background-image: url(img/1.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">1</button>
+    <button id="2" style="background-image: url(img/2.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">2</button>
+    <button id="3" style="background-image: url(img/3.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">3</button>
+    <button id="4" style="background-image: url(img/4.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">4</button>
+    <button id="5" style="background-image: url(img/5.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">5</button>
+    <button id="6" style="background-image: url(img/6.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">6</button>
+    <button id="7" style="background-image: url(img/7.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">7</button>
+    <button id="8" style="background-image: url(img/8.jpeg);background-size: cover;" onclick="sound() " onclick="keyFunction()">8</button>
+    <script>
+        function sound()
+        {
+        let a=Number(document.activeElement.id);
+        console.log(a)
+        console.log(typeof a);
+        
+        function music(data)
+        {
+            let a1=new Audio(data)
+            console.log(a1);
+            a1.play()
+        }
+            let arr=[1,2,3,4,5,6,7,8];
+            let sounds=["audio/keys/key01.mp3",
+            "audio/keys/key02.mp3",
+            "audio/keys/key03.mp3",
+            "audio/keys/key04.mp3",
+            "audio/keys/key05.mp3",
+            "audio/keys/key06.mp3",
+            "audio/keys/key07.mp3",
+            "audio/keys/key08.mp3"];
+
+        
+
+            for(i=0;i<=arr.length-1;i++)
+            {
+                if(a==arr[i])
+                {
+                    music(sounds[i])
+                }
+            }
+        
+    }
+    function keyFunction(event)
+        {
+        let k1=Number(event.key)
+        console.log(k1);
+        console.log(typeof k1)
+        function music(data)
+        {
+            let a1=new Audio(data)
+            console.log(a1);
+            a1.play()
+        }
+            let arr=[1,2,3,4,5,6,7,8];
+            let sounds=["audio/keys/key01.mp3",
+            "audio/keys/key02.mp3",
+            "audio/keys/key03.mp3",
+            "audio/keys/key04.mp3",
+            "audio/keys/key05.mp3",
+            "audio/keys/key06.mp3",
+            "audio/keys/key07.mp3",
+            "audio/keys/key08.mp3"];
+
+            for(i=0;i<=arr.length-1;i++)
+            {
+                if(k1==arr[i])
+                {
+                    music(sounds[i])
+                }
+            }
+        }
+        document.addEventListener("keypress",keyFunction)
+    </script>
+</body>
+</html>
